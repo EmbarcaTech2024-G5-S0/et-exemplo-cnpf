@@ -27,9 +27,51 @@ const char *const banner =
 #include <string.h>
 #include <stdbool.h>
 #include <locale.h>
-
+#include <stdio.h>
 #include "cnpf.h"
 
+int main() {
+    int opcao;
+    int n;
+
+    printf("Escolha uma operação:\n");
+    printf("1 - Fatorial\n");
+    printf("2 - Verificar Primo\n");
+    printf("3 - Fibonacci\n");
+    printf("4 - Raiz Quadrada Inteira\n");
+    printf("5 - Valor Absoluto\n");
+    printf("Opção: ");
+    scanf("%d", &opcao);
+
+    printf("Digite um número: ");
+    scanf("%d", &n);
+
+    switch (opcao) {
+        case 1:
+            printf("Fatorial de %d é %lld\n", n, factorial(n));
+            break;
+        case 2:
+            printf("%d é primo? %d\n", n, is_prime(n));
+            break;
+        case 3:
+            printf("Fibonacci de %d é %d\n", n, fibonacci(n));
+            break;
+        case 4:
+            printf("Raiz quadrada inteira de %d é %d\n", n, sqrt_approx(n));
+            break;
+        case 5:
+            printf("Valor absoluto de %d é %d\n", n, absolute(n));
+            break;
+        default:
+            printf("Opção inválida.\n");
+            break;
+    }
+
+    return 0;
+}
+
+#include<stdio.h>
+#include "cnpf.h"
 #include "util.c"
 #include "calc_stack.c"
 #include "calc.c"
