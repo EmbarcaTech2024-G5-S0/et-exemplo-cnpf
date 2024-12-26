@@ -35,3 +35,4 @@ char *get_user_line(int *length)
   *length = i;
   return buffer;
 }
+contribuindo para o projeto debugar o código 
